@@ -17,7 +17,6 @@ import com.qa.util.JSONUtil;
 
 @Transactional(SUPPORTS)
 @Default
-
 public class UserAccountDBRepository implements UserAccountRepository {
 	
 	@PersistenceContext(unitName = "primary")
@@ -73,5 +72,4 @@ public class UserAccountDBRepository implements UserAccountRepository {
 		this.util = util;
 	}
 	
-
 }

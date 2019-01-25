@@ -22,10 +22,11 @@ public class UserAccount {
 
 	}
 
-	public UserAccount(String userName, String userFullName, String emailAddress) {
+	public UserAccount(String userName, String userFullName, String emailAddress, String password) {
 		this.userName = userName;
 		this.userFullName = userFullName;
 		this.emailAddress = emailAddress;
+		this.password = password;
 	}
 
 	public Long getId() {
