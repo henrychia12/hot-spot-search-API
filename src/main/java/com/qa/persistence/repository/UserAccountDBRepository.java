@@ -26,7 +26,7 @@ public class UserAccountDBRepository implements UserAccountRepository {
 	private JSONUtil util;
 
 	public String getAllAccounts() {
-		Query query = manager.createQuery("Select a FROM Account a");
+		Query query = manager.createQuery("Select a FROM UserAccount a");
 		Collection<UserAccount> userAccounts = (Collection<UserAccount>) query.getResultList();
 		return util.getJSONForObject(userAccounts);
 	}
