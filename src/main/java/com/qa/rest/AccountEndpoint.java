@@ -42,9 +42,9 @@ public class AccountEndpoint {
 	@Path("/updateAccount/{userID}")
 	@POST
 	@Produces({ "application/json" })
-	public String updateAccount(@PathParam("userID") Long userID,String userFullName) {
+	public String updateAccount(@PathParam("userID") Long userID,String userAccount) {
 //		http://localhost:8080/AccountProject/api/account/updateAccount/3
-		return service.updateAccount(userID,userFullName);
+		return service.updateAccount(userID,userAccount);
 	}
 
 	public void setService(UserAccountService service) {

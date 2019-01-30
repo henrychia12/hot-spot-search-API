@@ -24,8 +24,8 @@ public class UserAccountServiceImpl implements UserAccountService {
 		return repo.createAccount(userAccount);
 	}
 
-	public String updateAccount(Long userID, String userFullName) {
-		return repo.updateAccount(userID, userFullName);
+	public String updateAccount(Long userID, String userAccount) {
+		return repo.updateAccount(userID, userAccount);
 	}
 
 	public String deleteAccount(Long userID) {

@@ -39,9 +39,9 @@ public class UserAccountDBRepository implements UserAccountRepository {
 	}
 	
 	@Transactional(REQUIRED)
-	public String updateAccount(Long userID, String userFullName) {
+	public String updateAccount(Long userID, String userAccount) {
 		UserAccount userAccountInDB = findUserAccount(userID);
-		UserAccount newUserAccount = util.getObjectForJSON(userFullName, UserAccount.class);
+		UserAccount newUserAccount = util.getObjectForJSON(userAccount, UserAccount.class);
 		if(userAccountInDB != null) {
 			manager.remove(userAccountInDB);
 			manager.persist(newUserAccount);
