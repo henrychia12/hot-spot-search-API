@@ -6,7 +6,7 @@ public interface UserAccountService {
 
 	String createAccount(String userAccount);
 	
-	String updateAccount(Long userID, String userFullName);
+	String updateAccount(Long userID, String userAccount);
 
 	String deleteAccount(Long userID);
 
