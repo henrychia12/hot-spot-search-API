@@ -1,7 +1,6 @@
 package com.qa.persistence.repository;
 
 import static javax.transaction.Transactional.TxType.REQUIRED;
-import static javax.transaction.Transactional.TxType.SUPPORTS;
 
 import java.util.Collection;
 
@@ -37,14 +36,38 @@ public class LocationDBRepository implements LocationRepository {
 		return  "{\"message\": \"Location has been sucessfully created\"}";
 	}
 
+	@Transactional(REQUIRED)
 	public String updateLocation(Long locationID, String location) {
-		// TODO Auto-generated method stub
-		return null;
+		Location locationInDB = findLocation(locationID);
+		Location newLocation = util.getObjectForJSON(location, Location.class);
+		if(locationInDB != null) {
+			manager.remove(locationInDB);
+			manager.persist(newLocation);
+			return "{\"message\": \"has been sucessfully updated\"}";
+		}
+		return "{\"message\": \"details entered are invalid\"}";
 	}
 
+	@Transactional(REQUIRED)
 	public String deleteLocation(Long locationID) {
-		// TODO Auto-generated method stub
-		return null;
+		Location locationInDB = findLocation(locationID);
+		if(locationInDB != null) {
+			manager.remove(locationInDB);
+			return "{\"message\": \"location sucessfully deleted\"}";
+		}
+		return "{\"message\": \"deletion unsuccessful\"}";
+	}
+	
+	private Location findLocation(Long locationID) {
+		return manager.find(Location.class, locationID);
+	}
+	
+	public void setManager(EntityManager manager) {
+		this.manager = manager;
+	}
+	
+	public void setUtil(JSONUtil util) {
+		this.util = util;
 	}
 
 }
