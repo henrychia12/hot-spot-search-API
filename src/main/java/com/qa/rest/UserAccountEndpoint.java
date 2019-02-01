@@ -10,7 +10,7 @@ import javax.ws.rs.Produces;
 import com.qa.business.service.UserAccountService;
 
 @Path("/userAccount")
-public class AccountEndpoint {
+public class UserAccountEndpoint {
 	
 	@Inject
 	private UserAccountService service;
@@ -19,7 +19,6 @@ public class AccountEndpoint {
 	@GET
 	@Produces({ "application/json" })
 	public String getAllAccounts() {
-//		http://localhost:8080/AccountProject/api/account/getAllAccounts
 		return service.getAllAccounts();
 	}
 
@@ -27,7 +26,6 @@ public class AccountEndpoint {
 	@POST
 	@Produces({ "application/json" })
 	public String createAccount(String userAccount) {
-//		http://localhost:8080/AccountProject/api/account/createAccount
 		return service.createAccount(userAccount);
 	}
 
@@ -35,7 +33,6 @@ public class AccountEndpoint {
 	@DELETE
 	@Produces({ "application/json" })
 	public String deleteAccount(@PathParam("userID") Long userID) {
-//		http://localhost:8080/AccountProject/api/account/deleteAccount/1
 		return service.deleteAccount(userID);
 	}
 	
@@ -43,7 +40,6 @@ public class AccountEndpoint {
 	@POST
 	@Produces({ "application/json" })
 	public String updateAccount(@PathParam("userID") Long userID,String userAccount) {
-//		http://localhost:8080/AccountProject/api/account/updateAccount/3
 		return service.updateAccount(userID,userAccount);
 	}
 
