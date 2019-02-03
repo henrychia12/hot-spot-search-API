@@ -16,18 +16,21 @@ public class UserAccountServiceImpl implements UserAccountService {
 	public String getAllAccounts() {
 		return repo.getAllAccounts();
 	}
-
+	
+	@Override
 	public String createAccount(String userAccount) {
 		if ((util.getObjectForJSON(userAccount, UserAccount.class).getUserFullName() == "Henry Chia")) {
 			return "{\"message\": \"User is banned\"}";
 		}
 		return repo.createAccount(userAccount);
 	}
-
+	
+	@Override
 	public String updateAccount(Long userID, String userAccount) {
 		return repo.updateAccount(userID, userAccount);
 	}
 
+	@Override
 	public String deleteAccount(Long userID) {
 		return repo.deleteAccount(userID);
 	}
