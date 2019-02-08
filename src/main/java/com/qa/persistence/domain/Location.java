@@ -61,6 +61,6 @@ public class Location {
 	
 	@Override
 	public String toString() {
-		return "Country Name: " + countryName + "Location Name: " + locationName + ",Image:" + image + ", Description: " + description ;
+		return "Country Name: " + countryName + ", Location Name: " + locationName + ",Image:" + image + ", Description: " + description ;
 	}
 }
