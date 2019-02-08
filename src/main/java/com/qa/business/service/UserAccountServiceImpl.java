@@ -19,7 +19,7 @@ public class UserAccountServiceImpl implements UserAccountService {
 	
 	@Override
 	public String createAccount(String userAccount) {
-		if ((util.getObjectForJSON(userAccount, UserAccount.class).getUserFullName() == "Henry Chia")) {
+		if ((util.getObjectForJSON(userAccount, UserAccount.class).getUserFullName().equals("Henry Chia"))) {
 			return "{\"message\": \"User is banned\"}";
 		}
 		return repo.createAccount(userAccount);
