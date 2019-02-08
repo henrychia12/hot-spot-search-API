@@ -21,8 +21,10 @@ public class Location {
 		
 	}
 	
-	public Location(String locationName, String description) {
+	public Location(String countryName, String locationName, String image, String description) {
+		this.countryName = countryName;
 		this.locationName = locationName;
+		this.image = image;
 		this.description = description;
 	}
 
@@ -32,6 +34,14 @@ public class Location {
 
 	public void setLocationID(Long locationID) {
 		this.locationID = locationID;
+	}
+	
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public String getLocationName() {
