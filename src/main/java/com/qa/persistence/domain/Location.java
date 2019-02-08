@@ -12,6 +12,7 @@ public class Location {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private Long locationID;
+	private String countryName;
 	private String locationName;
 	private String image;
 	private String description;
@@ -49,10 +50,17 @@ public class Location {
 		this.description = description;
 	}
 	
-	
+
+	public String getCountryName() {
+		return countryName;
+	}
+
+	public void setCountryName(String countryName) {
+		this.countryName = countryName;
+	}
 	
 	@Override
 	public String toString() {
-		return "Location Name: " + locationName + ",Image:" + image + ", Description: " + description ;
+		return "Country Name: " + countryName + "Location Name: " + locationName + ",Image:" + image + ", Description: " + description ;
 	}
 }
